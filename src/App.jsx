@@ -68,8 +68,16 @@ function App() {
   };
 
   const cartTotal = () => {
-    let total = cartSubTotal() + deliveryFee;
+    let sum = 0;
+    let total = 0;
+    cart.map((item) => {
+      sum = sum + item.price * item.quantity;
+    });
+
+    total = sum + 2.5;
+
     total = total.toFixed(2).replace(".", ",");
+
     return total;
   };
 
@@ -82,7 +90,7 @@ function App() {
     <>
       <div>
         <header>
-          <div className="container">
+          <div>
             <img src="src/assets/images/logo-teal.svg" alt="" />
           </div>
         </header>
@@ -114,7 +122,7 @@ function App() {
                               handleClickMinus(item);
                             }}
                           >
-                            -
+                            <i className="icon-minus"></i>
                           </button>
                           <p>{item.quantity}</p>
                           <button
@@ -122,10 +130,10 @@ function App() {
                               handleClickPlus(item);
                             }}
                           >
-                            +
+                            <i className="icon-plus"></i>
                           </button>
                         </div>
-                        <p>{item.name}</p>
+                        <p>{item.title}</p>
                         <p>{item.price * item.quantity}€</p>
                       </div>
                     ))}
@@ -140,7 +148,7 @@ function App() {
                       </div>
                       <div>
                         <p>Total</p>
-                        <p>{cartSubTotal()}€</p>
+                        <p>{cartTotal()}€</p>
                       </div>
                     </div>
                   </>

@@ -1,4 +1,5 @@
 /*GENERAL*/
+@import url("./assets/deliveroo-icons_b54plz/style.css");
 
 body {
   display: flex;
@@ -26,6 +27,9 @@ header {
 }
 
 header div {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
   /* border: red solid; */
 }
 
@@ -91,7 +95,7 @@ aside {
 
   box-sizing: border-box;
 }
-.cart button {
+.cart > button {
   height: 50px;
   border: none;
   border-radius: 5px;
@@ -104,7 +108,11 @@ aside {
 .emptyCart {
   margin: 0 20px;
   padding: 40px 0;
+  /* border: red solid; */
+  display: flex;
+  justify-content: center;
 }
+
 .cart div div div {
   /* border: orange solid; */
   display: flex;
@@ -125,6 +133,16 @@ aside {
   padding: 16px 0;
   margin: 0 10px;
   border-bottom: #dcdede 1px solid;
+  align-items: center;
+  /* border: red solid; */
+  justify-content: space-between;
+}
+
+.cartItem button {
+  background: none;
+  color: #2dcdbd;
+  border: none;
+  font-size: 20px;
 }
 
 /*CATEGORY*/
